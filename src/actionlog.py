@@ -45,22 +45,22 @@ class IngressActionMonitor():
 
     def getChat(self, minTimestampMs):
         # url='http://www.ingress.com/rpc/dashboard.getPaginatedPlextsV2'
-        m_apiuri = 'tmhlcb5fz9apyww2'  # GET_PAGINATED_PLEXTS
+        m_apiuri = '7pscbd6vtwbibpzr'  # GET_PAGINATED_PLEXTS
         url='https://www.ingress.com/r/' + m_apiuri
 
         # munge are 
-        m_faction = 'codhu6b393ygyzle'  # codhu6b393ygyzle:e
-        m_desiredNumItems = 'ykanusje1neibvzq'  # ykanusje1neibvzq:f
-        m_maxTimestampMs = 'h2jta7ah8fn24deh'
-        m_minTimestampMs = 'zblx74ndsgw9z65s'
-        m_minLatE6 = '8cpt8a8ynz6dq5xn'
-        m_maxLatE6 = 'js4pot11ouluvk41'
-        m_minLngE6 = 'zx1x43gh5u41qa4l'
-        m_maxLngE6 = 'qeb0lhwkrd641z47'
+        m_faction = 'ah7f9puw5is6xgyz'  # nemesis.dashboard.network.PlextStore.prototype.getPlexts b.[a-z0\9]+ = c;
+        m_desiredNumItems = 'gcg00bp8jz10ye3f'  # nemesis.dashboard.requests.normalizeParamCount c = {[a-z0-9]+:f,
+        m_minTimestampMs = 'kjt3ck5iw2arv0o7'  # :e
+        m_maxTimestampMs = 'kl23gr0z2qb2hoev'  # :f
+        m_minLatE6 = 'euvaxeol6an6tbo8'  # :Math.round(d.bounds.sw.lat() * 1E6)
+        m_maxLatE6 = 'gmn1na8m6d8fpudi'  # :Math.round(d.bounds.ne.lat() * 1E6)
+        m_minLngE6 = '6hqe3lkjl9tt1k08'  # :Math.round(d.bounds.sw.lng() * 1E6)
+        m_maxLngE6 = '5fu4jsotfjam5ue0'  # :Math.round(d.bounds.ne.lng() * 1E6)
 
-        m_apiname = 'zqjwxapf9tj3qpm6'  #  nemesis.dashboard.network.XhrController.prototype.doSendRequest_.e
-        m_nazohashname = 'zmlblgphv1m7djzk'  # nemesis.dashboard.network.XhrController.prototype.doSendRequest_.e
-        m_nazohashbody = '290f13d807ec19ee1a3fdd6ecdf3d7ea3e140990'
+        m_apiname = 'xrdvsoppz8khnd55'  #  nemesis.dashboard.network.XhrController.prototype.doSendRequest_  e.[a-z0-9]+ = c
+        m_nazohashname = '9amimmeymgvnfrn8'  # nemesis.dashboard.network.XhrController.prototype.doSendRequest_ e["[a-z0-9]+"] =
+        m_nazohashbody = '1713782d7d358b142894a0c8a605f80aa5402802'  # e["..."] = "........."
         #  m_nazotrue = 'orv7l6mjjggor28h'
 
 
