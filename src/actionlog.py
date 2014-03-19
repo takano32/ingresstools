@@ -51,8 +51,8 @@ class IngressActionMonitor():
         # munge are 
         m_faction = 'codhu6b393ygyzle'  # codhu6b393ygyzle:e
         m_desiredNumItems = 'ykanusje1neibvzq'  # ykanusje1neibvzq:f
-        m_minTimestampMs = 'h2jta7ah8fn24deh'
-        m_maxTimestampMs = 'zblx74ndsgw9z65s'
+        m_maxTimestampMs = 'h2jta7ah8fn24deh'
+        m_minTimestampMs = 'zblx74ndsgw9z65s'
         m_minLatE6 = '8cpt8a8ynz6dq5xn'
         m_maxLatE6 = 'js4pot11ouluvk41'
         m_minLngE6 = 'zx1x43gh5u41qa4l'
