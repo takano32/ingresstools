@@ -45,23 +45,23 @@ class IngressActionMonitor():
 
     def getChat(self, minTimestampMs):
         # url='http://www.ingress.com/rpc/dashboard.getPaginatedPlextsV2'
-        m_apiuri = '7pscbd6vtwbibpzr'
+        m_apiuri = 'tmhlcb5fz9apyww2'  # GET_PAGINATED_PLEXTS
         url='https://www.ingress.com/r/' + m_apiuri
 
         # munge are 
-        m_faction = 'ah7f9puw5is6xgyz'
-        m_desiredNumItems = 'gcg00bp8jz10ye3f'
-        m_minTimestampMs = 'kl23gr0z2qb2hoev'
-        m_maxTimestampMs = 'kjt3ck5iw2arv0o7'
-        m_minLatE6 = 'euvaxeol6an6tbo8'
-        m_maxLatE6 = 'gmn1na8m6d8fpudi'
-        m_minLngE6 = '6hqe3lkjl9tt1k08'
-        m_maxLngE6 = '5fu4jsotfjam5ue0'
+        m_faction = 'codhu6b393ygyzle'  # codhu6b393ygyzle:e
+        m_desiredNumItems = 'ykanusje1neibvzq'  # ykanusje1neibvzq:f
+        m_minTimestampMs = 'h2jta7ah8fn24deh'
+        m_maxTimestampMs = 'zblx74ndsgw9z65s'
+        m_minLatE6 = '8cpt8a8ynz6dq5xn'
+        m_maxLatE6 = 'js4pot11ouluvk41'
+        m_minLngE6 = 'zx1x43gh5u41qa4l'
+        m_maxLngE6 = 'qeb0lhwkrd641z47'
 
-        m_apiname = 'xrdvsoppz8khnd55'
-        m_nazohashname = '9amimmeymgvnfrn8'
-        m_nazohashbody = '1713782d7d358b142894a0c8a605f80aa5402802'
-        m_nazotrue = 'orv7l6mjjggor28h'
+        m_apiname = 'zqjwxapf9tj3qpm6'  #  nemesis.dashboard.network.XhrController.prototype.doSendRequest_.e
+        m_nazohashname = 'zmlblgphv1m7djzk'  # nemesis.dashboard.network.XhrController.prototype.doSendRequest_.e
+        m_nazohashbody = '290f13d807ec19ee1a3fdd6ecdf3d7ea3e140990'
+        #  m_nazotrue = 'orv7l6mjjggor28h'
 
 
         cookies = dict(csrftoken=settings.CSRF_TOKEN,
