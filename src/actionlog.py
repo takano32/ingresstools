@@ -51,8 +51,8 @@ class IngressActionMonitor():
         # munge are 
         m_faction = 'ah7f9puw5is6xgyz'  # nemesis.dashboard.network.PlextStore.prototype.getPlexts b.[a-z0\9]+ = c;
         m_desiredNumItems = 'gcg00bp8jz10ye3f'  # nemesis.dashboard.requests.normalizeParamCount c = {[a-z0-9]+:f,
-        m_minTimestampMs = 'kjt3ck5iw2arv0o7'  # :e
-        m_maxTimestampMs = 'kl23gr0z2qb2hoev'  # :f
+        m_maxTimestampMs = 'kjt3ck5iw2arv0o7'  # :e
+        m_minTimestampMs = 'kl23gr0z2qb2hoev'  # :f
         m_minLatE6 = 'euvaxeol6an6tbo8'  # :Math.round(d.bounds.sw.lat() * 1E6)
         m_maxLatE6 = 'gmn1na8m6d8fpudi'  # :Math.round(d.bounds.ne.lat() * 1E6)
         m_minLngE6 = '6hqe3lkjl9tt1k08'  # :Math.round(d.bounds.sw.lng() * 1E6)
@@ -121,6 +121,7 @@ class IngressActionMonitor():
             else:
                 raise UnexpectedResultException(jsonStr)
         else:
+            self.errorcount = 0
             responseItemsOrderedAsc = responseItems['result']
             responseItemsOrderedAsc.reverse()
             for message in responseItemsOrderedAsc:
