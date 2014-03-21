@@ -6,6 +6,7 @@ import json
 import time
 import settings
 import sys
+import prettyprint
 
 SLEEP_SECONDS = 31
 
@@ -45,22 +46,22 @@ class IngressActionMonitor():
 
     def getChat(self, minTimestampMs):
         # url='http://www.ingress.com/rpc/dashboard.getPaginatedPlextsV2'
-        m_apiuri = '7pscbd6vtwbibpzr'  # GET_PAGINATED_PLEXTS
-        url='https://www.ingress.com/r/' + m_apiuri
+        m_paginated_plexts = 'jxdq371493o21nyz'  # GET_PAGINATED_PLEXTS
+        url='https://www.ingress.com/r/' + m_paginated_plexts
 
         # munge are 
-        m_faction = 'ah7f9puw5is6xgyz'  # nemesis.dashboard.network.PlextStore.prototype.getPlexts b.[a-z0\9]+ = c;
-        m_desiredNumItems = 'gcg00bp8jz10ye3f'  # nemesis.dashboard.requests.normalizeParamCount c = {[a-z0-9]+:f,
-        m_maxTimestampMs = 'kjt3ck5iw2arv0o7'  # :e
-        m_minTimestampMs = 'kl23gr0z2qb2hoev'  # :f
-        m_minLatE6 = 'euvaxeol6an6tbo8'  # :Math.round(d.bounds.sw.lat() * 1E6)
-        m_maxLatE6 = 'gmn1na8m6d8fpudi'  # :Math.round(d.bounds.ne.lat() * 1E6)
-        m_minLngE6 = '6hqe3lkjl9tt1k08'  # :Math.round(d.bounds.sw.lng() * 1E6)
-        m_maxLngE6 = '5fu4jsotfjam5ue0'  # :Math.round(d.bounds.ne.lng() * 1E6)
+        m_chattab = '5g88svzs7m1dz9d8'  # chattab  # nemesis.dashboard.network.PlextStore.prototype.getPlexts b.[a-z0\9]+ = c;
+        m_desiredNumItems = '19nreawb47x5a4wu'  # nemesis.dashboard.requests.normalizeParamCount c = {[a-z0-9]+:f,
+        m_maxTimestampMs = '20pgou24gzb0ufuw'  # :e
+        m_minTimestampMs = 'yfvqtkdp4dwe8cv1'  # :f
+        m_minLatE6 = 'xoa39f1ge0qy2uim'  # :Math.round(d.bounds.sw.lat() * 1E6)
+        m_maxLatE6 = 'fdwasnkqc3tw3min'  # :Math.round(d.bounds.ne.lat() * 1E6)
+        m_minLngE6 = 's8d1s6ypvqhc1c9w'  # :Math.round(d.bounds.sw.lng() * 1E6)
+        m_maxLngE6 = '0eudfw1vuc0mgfqh'  # :Math.round(d.bounds.ne.lng() * 1E6)
 
-        m_apiname = 'xrdvsoppz8khnd55'  #  nemesis.dashboard.network.XhrController.prototype.doSendRequest_  e.[a-z0-9]+ = c
-        m_nazohashname = '9amimmeymgvnfrn8'  # nemesis.dashboard.network.XhrController.prototype.doSendRequest_ e["[a-z0-9]+"] =
-        m_nazohashbody = '1713782d7d358b142894a0c8a605f80aa5402802'  # e["..."] = "........."
+        m_method = '9ii571tgmncqmhce'  #  nemesis.dashboard.network.XhrController.prototype.doSendRequest_  e.[a-z0-9]+ = c
+        m_version = 'tt68wpncsrwm7vxn'  # nemesis.dashboard.network.XhrController.prototype.doSendRequest_ e["[a-z0-9]+"] = 
+        m_version_parameter = 'd6180e16ff30ce578d04d3d9f4bccbdb2fc05110'  # e["..."] = "........."  # version_parameter
         #  m_nazotrue = 'orv7l6mjjggor28h'
 
 
@@ -73,29 +74,16 @@ class IngressActionMonitor():
                    "Content-Type": r"application/json; charset=UTF-8",
                    "User-Agent": r"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.45 Safari/537.36"}
         data = {
-                m_apiname: m_apiuri,
-                m_nazohashname: m_nazohashbody,
-                m_faction: "all",
+                m_method: m_paginated_plexts,
+                m_version: m_version_parameter,
+                m_chattab: "all",
                 m_desiredNumItems: 50,
                 m_minTimestampMs: minTimestampMs,
                 m_maxTimestampMs: -1,
-                m_minLatE6: 34635628,
-                m_maxLatE6: 36295361,
+                m_minLatE6: 34635620,
+                m_maxLatE6: 36295360,
                 m_minLngE6: 137530674,
                 m_maxLngE6: 140947422,
-
-                #  "1vxkm93nriulf6sf": "r26bgpb580xsf75u",  # ?means all?
-                #  "2pi60k3c6ro16bar": "all",  # faction
-                #  "3fdprk50o96n0dsw": "4237424919d7afaceaa09d91effe3c038fcb5681",  # ?
-                #  "f3jv93vvyom5hteq": 50,  # desirednumitems
-
-                #  "hg5rngxi8pz30yck": minTimestampMs,  # minTimestampMs
-                #  "n793l18406ogclto": -1,  # maxTimestampMs
-
-                #  "r6ygbgm4pn1vk8p2": 34635628,  # minLatE6
-                #  "i556mc3zenw6wzqx": 36295361,  # maxLatE6
-                #  "vo4iuf8l3wdqxobx": 137530674,  # minLngE6
-                #  "w0490topwoo7bztn": 140947422,  # maxLngE6
                 }
 
                 # "desiredNumItems":50,"minLatE6":44769720,"minLngE6":-93665038,"maxLatE6":45136110,"maxLngE6":-92420150,"minTimestampMs":minTimestampMs,"maxTimestampMs":-1,"method":"dashboard.getPaginatedPlextsV2"}
@@ -128,6 +116,7 @@ class IngressActionMonitor():
                 yield message
                 self.minTimestampMs = message[1] + 1
             print(self.minTimestampMs)
+            prettyprint.pp(responseItems)
     
     def actiongen(self):
         messages = self.messagegen()
