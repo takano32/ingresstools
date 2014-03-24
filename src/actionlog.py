@@ -9,6 +9,8 @@ import sys
 import prettyprint
 
 SLEEP_SECONDS = 31
+MIN_SLEEP_SECONDS = 10
+MAX_SLEEP_SECONDS = 60*3
 
 
 class UnexpectedResultException(Exception):
@@ -17,10 +19,12 @@ class UnexpectedResultException(Exception):
 
 class IngressActionMonitor():
     MAX_ERRORS = 10
+    sleep_sec = SLEEP_SECONDS
 
     def __init__(self):
         self.minTimestampMs = -1
         self.errorcount = 0
+        self.adjust_sleep()
 
         if settings.CSRF_TOKEN == '':
             raise ValueError("Please specify valid csrf token setting")
@@ -100,6 +104,7 @@ class IngressActionMonitor():
         
         if 'result' not in responseItems:
             self.errorcount += 1
+            self.adjust_sleep(0)
             if(self.errorcount > self.MAX_ERRORS):
                 print("error counter exceeded, existing...")
                 sys.exit(1)
@@ -117,7 +122,29 @@ class IngressActionMonitor():
                 self.minTimestampMs = message[1] + 1
             print(self.minTimestampMs)
             prettyprint.pp(responseItems)
+            counts = len(responseItemsOrderedAsc)
+            self.adjust_sleep(counts)
+            print("counts: %d" % len(responseItemsOrderedAsc))
+            print("sleep_sec: %d" % self.sleep_sec)
     
+
+    def adjust_sleep(self, factor=None):
+        """ factor: count of messages per unit time """
+        if factor is None:
+            self.sleep_sec = SLEEP_SECONDS
+
+        else:
+            if factor != 0:
+                self.sleep_sec = MAX_SLEEP_SECONDS/factor + MIN_SLEEP_SECONDS
+            else:
+                self.sleep_sec = MAX_SLEEP_SECONDS+MIN_SLEEP_SECONDS
+
+            if self.sleep_sec > (MAX_SLEEP_SECONDS+MIN_SLEEP_SECONDS):
+                self.sleep_sec = (MAX_SLEEP_SECONDS+MIN_SLEEP_SECONDS)
+            elif self.sleep_sec < MIN_SLEEP_SECONDS:
+                self.sleep_sec = MIN_SLEEP_SECONDS
+
+
     def actiongen(self):
         messages = self.messagegen()
         return (message for message in messages if message[2]['plext']['plextType'] == 'SYSTEM_BROADCAST')
@@ -128,7 +155,8 @@ class IngressActionMonitor():
             for action in self.actiongen():
                 yield action
             self.write_state()
-            time.sleep(SLEEP_SECONDS)
+            time.sleep(self.sleep_sec)
+
 
 def log_lines():
     f = open(settings.LOGFILE, 'r')
@@ -139,7 +167,8 @@ def log_lines():
             yield line #None if no new line
     finally:
         f.close()
-        
+
+
 if __name__ == '__main__':
     monitor = IngressActionMonitor()
     f = open(settings.LOGFILE, 'a', 0)
