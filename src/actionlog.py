@@ -50,22 +50,22 @@ class IngressActionMonitor():
 
     def getChat(self, minTimestampMs):
         # url='http://www.ingress.com/rpc/dashboard.getPaginatedPlextsV2'
-        m_paginated_plexts = 'g4wopxebug4yyjgg'  # GET_PAGINATED_PLEXTS
+        m_paginated_plexts = "fbh77d47v0x3w3gb"  # GET_PAGINATED_PLEXTS
         url='https://www.ingress.com/r/' + m_paginated_plexts
 
         # munge are 
-        m_chattab = 'qsf40m22asvmsigc'  # chattab  # nemesis.dashboard.network.PlextStore.prototype.getPlexts b.[a-z0\9]+ = c;
-        m_desiredNumItems = 'u0lbc2wynpe97iwz'  # nemesis.dashboard.requests.normalizeParamCount c = {[a-z0-9]+:f,
-        m_maxTimestampMs = '38g9ryv7689qst4v'  # :e
-        m_minTimestampMs = 'qc8fvrxuvh5s75y5'  # :f
-        m_minLatE6 = 'to40h8zxn05mblbe'  # :Math.round(d.bounds.sw.lat() * 1E6)
-        m_maxLatE6 = 'mb4mcu5etnoj9o2w'  # :Math.round(d.bounds.ne.lat() * 1E6)
-        m_minLngE6 = 'ht6l420sq19n98uy'  # :Math.round(d.bounds.sw.lng() * 1E6)
-        m_maxLngE6 = 'snr5yjrv4rgelhnl'  # :Math.round(d.bounds.ne.lng() * 1E6)
+        m_chattab = "i71rol1rnu22tejl"  # chattab  # nemesis.dashboard.network.PlextStore.prototype.getPlexts b.[a-z0\9]+ = c;
+        m_desiredNumItems = "m4dloqwrm0qakqkk"  # nemesis.dashboard.requests.normalizeParamCount c = {[a-z0-9]+:f,
+        m_maxTimestampMs = "nngzbwwq3jfzaa22"  # :e
+        m_minTimestampMs = "w6r3v5oo6n6ttwx5"  # :f
+        m_minLatE6 = "p1lw6imw9fk4037o"  # :Math.round(d.bounds.sw.lat() * 1E6)
+        m_maxLatE6 = "7row0ym4db0pfr6t"  # :Math.round(d.bounds.ne.lat() * 1E6)
+        m_minLngE6 = "9qzpiu32voc99n6h"  # :Math.round(d.bounds.sw.lng() * 1E6)
+        m_maxLngE6 = "lganrn4b5cez33nq"  # :Math.round(d.bounds.ne.lng() * 1E6)
 
-        m_method = '23osl53vyaxt02is'  #  nemesis.dashboard.network.XhrController.prototype.doSendRequest_  e.[a-z0-9]+ = c
-        m_version = 'ajq6323sspo66mkj'  # nemesis.dashboard.network.XhrController.prototype.doSendRequest_ e["[a-z0-9]+"] = 
-        m_version_parameter = 'de5cb5070d361612c02736f4ba7220f9f5f1ebc7'  # e["..."] = "........."  # version_parameter
+        m_method = "3s6re5a4yzkwe4ia"  #  nemesis.dashboard.network.XhrController.prototype.doSendRequest_  e.[a-z0-9]+ = c
+        m_version = "ve93whmfe76mfq1v"  # nemesis.dashboard.network.XhrController.prototype.doSendRequest_ e["[a-z0-9]+"] = 
+        m_version_parameter = "1df1236c979c89bea9dc49d3aa9157fe90b6aece"  # e["..."] = "........."  # version_parameter
         #  m_nazotrue = 'orv7l6mjjggor28h'
 
 
