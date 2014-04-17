@@ -66,7 +66,6 @@ class IngressActionMonitor():
         m_method =  "5dfq4a4o4gugopfl" #  nemesis.dashboard.network.XhrController.prototype.doSendRequest_  e.[a-z0-9]+ = c
         m_version = "gwcfe0o2a6ni6g6h"  # nemesis.dashboard.network.XhrController.prototype.doSendRequest_ e["[a-z0-9]+"] = 
         m_version_parameter = "2a1be0e905823f9e342a2cd6b61f0814d0b40153"  # e["..."] = "........."  # version_parameter
-        #  m_nazotrue = 'orv7l6mjjggor28h'
 
 
         cookies = dict(csrftoken=settings.CSRF_TOKEN,
@@ -98,6 +97,7 @@ class IngressActionMonitor():
 
         return r.content
     
+
     def messagegen(self):
         jsonStr = self.getChat(self.minTimestampMs)
         responseItems = json.loads(jsonStr)
@@ -120,18 +120,17 @@ class IngressActionMonitor():
             for message in responseItemsOrderedAsc:
                 yield message
                 self.minTimestampMs = message[1] + 1
-            print(self.minTimestampMs)
             prettyprint.pp(responseItems)
+
+            print(self.minTimestampMs)
+            tm = time.localtime(self.minTimestampMs/1000.0)
+            print("%04d/%02d/%02d %02d:%02d:%02d" % (tm.tm_year, tm.tm_mon, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec))
+
             counts = len(responseItemsOrderedAsc)
             self.adjust_sleep(counts)
+
             print("counts: %d" % len(responseItemsOrderedAsc))
             print("sleep_sec: %d" % self.sleep_sec)
-
-
-
-
-
-
     
 
     def adjust_sleep(self, factor=None):
