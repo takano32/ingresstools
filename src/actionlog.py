@@ -107,12 +107,14 @@ class IngressActionMonitor():
             self.adjust_sleep(0)
             if(self.errorcount > self.MAX_ERRORS):
                 print("error counter exceeded, existing...")
-                sys.exit(1)
+                raise UnexpectedResultException(jsonStr)
+                # sys.exit(1)
 
             if 'error' in responseItems:
                 print(responseItems)
             else:
-                raise UnexpectedResultException(jsonStr)
+                self.errorcount += 1
+                # raise UnexpectedResultException(jsonStr)
         else:
             self.errorcount = 0
             responseItemsOrderedAsc = responseItems['result']
@@ -122,7 +124,6 @@ class IngressActionMonitor():
                 self.minTimestampMs = message[1] + 1
             prettyprint.pp(responseItems)
 
-            print(self.minTimestampMs)
             tm = time.localtime(self.minTimestampMs/1000.0)
             print("%04d/%02d/%02d %02d:%02d:%02d" % (tm.tm_year, tm.tm_mon, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec))
 
