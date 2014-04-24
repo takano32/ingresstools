@@ -92,15 +92,25 @@ class IngressActionMonitor():
                 # "desiredNumItems":50,"minLatE6":44769720,"minLngE6":-93665038,"maxLatE6":45136110,"maxLngE6":-92420150,"minTimestampMs":minTimestampMs,"maxTimestampMs":-1,"method":"dashboard.getPaginatedPlextsV2"}
 
         print(json.dumps(data, indent=4))
-        r = requests.post(url, data=json.dumps(data), headers=headers, cookies=cookies)
-        print(r.content)
+        try:
+            r = requests.post(url, data=json.dumps(data), headers=headers, cookies=cookies)
+            print(r.content)
+
+        except:
+            r.content = None
+
 
         return r.content
     
 
     def messagegen(self):
         jsonStr = self.getChat(self.minTimestampMs)
-        responseItems = json.loads(jsonStr)
+        responseItems = []
+        try:
+            responseItems = json.loads(jsonStr)
+
+        finally:
+            pass
         
         if 'result' not in responseItems:
             self.errorcount += 1
