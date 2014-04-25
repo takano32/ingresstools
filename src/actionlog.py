@@ -99,7 +99,6 @@ class IngressActionMonitor():
         except:
             r.content = None
 
-
         return r.content
     
 
@@ -109,7 +108,7 @@ class IngressActionMonitor():
         try:
             responseItems = json.loads(jsonStr)
 
-        finally:
+        except ValueError:
             pass
         
         if 'result' not in responseItems:
@@ -124,7 +123,6 @@ class IngressActionMonitor():
                 print(responseItems)
             else:
                 self.errorcount += 1
-                # raise UnexpectedResultException(jsonStr)
         else:
             self.errorcount = 0
             responseItemsOrderedAsc = responseItems['result']
