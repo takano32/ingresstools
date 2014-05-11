@@ -71,8 +71,8 @@ class IngressActionMonitor():
         cookies = dict({"csrftoken": settings.CSRF_TOKEN,
                         "SACSID": settings.SESSION_ID,
                         "GOOGAPPUID": 679,
-                        'ingress.intelmap.lat': 35.6506,
-                        "ingress.intelmap.lng": 139.7225,
+                        'ingress.intelmap.lat': 35.6605,
+                        "ingress.intelmap.lng": 139.7292,
                         "ingress.intelmap.zoom": 18,
                        })
 
