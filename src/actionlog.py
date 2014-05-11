@@ -50,27 +50,32 @@ class IngressActionMonitor():
 
     def getChat(self, minTimestampMs):
         # url='http://www.ingress.com/rpc/dashboard.getPaginatedPlextsV2'
-        m_paginated_plexts = "nmhxd48xgv27smx5"  # GET_PAGINATED_PLEXTS
+        m_paginated_plexts = "vd1sh1wsyau65lhf"  # GET_PAGINATED_PLEXTS
         url='https://www.ingress.com/r/' + m_paginated_plexts
 
         # munge are 
-        m_chattab = "8yimcev6se2rmoj5"  # chattab  # nemesis.dashboard.network.PlextStore.prototype.getPlexts b.[a-z0\9]+ = c;
-        m_desiredNumItems = "rsye6nmi5dzpg3gr"  # nemesis.dashboard.requests.normalizeParamCount c = {[a-z0-9]+:f,
-        m_maxTimestampMs = "ieymvz2sicy4os3e"  # :e
-        m_minTimestampMs = "wvtqwehkckfqil8j"  # :f
-        m_minLatE6 = "oms6l6yxils4j65y"  # :Math.round(d.bounds.sw.lat() * 1E6)
-        m_maxLatE6 = "emplv6y80d7fgerd"  # :Math.round(d.bounds.ne.lat() * 1E6)
-        m_minLngE6 = "h93t7tti5fajkxl0"  # :Math.round(d.bounds.sw.lng() * 1E6)
-        m_maxLngE6 = "o3c2s79aoopfw4bq"  # :Math.round(d.bounds.ne.lng() * 1E6)
+        m_chattab = "xzlca5100enuvc9n"  # chattab  # nemesis.dashboard.network.PlextStore.prototype.getPlexts b.[a-z0\9]+ = c;
+        m_desiredNumItems = "dzrljqnsqco2l642"  # nemesis.dashboard.requests.normalizeParamCount c = {[a-z0-9]+:f,
+        m_maxTimestampMs = "7a7cg8d3y4fa1mi1"  # :e
+        m_minTimestampMs = "7ts98y7zncnvgdug"  # :f
+        m_minLatE6 = "8aldbuu6x43bwqec"  # :Math.round(d.bounds.sw.lat() * 1E6)
+        m_maxLatE6 = "8vm47on7hg40dh5s"  # :Math.round(d.bounds.ne.lat() * 1E6)
+        m_minLngE6 = "ojnyssfneddurb3n"  # :Math.round(d.bounds.sw.lng() * 1E6)
+        m_maxLngE6 = "77t2v4u22bh2z7qb"  # :Math.round(d.bounds.ne.lng() * 1E6)
 
-        m_method =  "pkxmjvp7xm2r3kny" #  nemesis.dashboard.network.XhrController.prototype.doSendRequest_  e.[a-z0-9]+ = c
-        m_version = "48s4o2iz9kquduj5"  # nemesis.dashboard.network.XhrController.prototype.doSendRequest_ e["[a-z0-9]+"] = 
-        m_version_parameter = "9dcc12279cbd2c890d1eb48f398eaf06947d8b6f"  # e["..."] = "........."  # version_parameter
+        m_method =  "p89duelkwzzsso1b" #  nemesis.dashboard.network.XhrController.prototype.doSendRequest_  e.[a-z0-9]+ = c
+        m_version = "n8d8jcosz5o10xkn"  # nemesis.dashboard.network.XhrController.prototype.doSendRequest_ e["[a-z0-9]+"] = 
+        m_version_parameter = "5cfaf2cb9c8c61301d6ad03f397b11dbc6ce3f47"  # e["..."] = "........."  # version_parameter
 
 
-        cookies = dict(csrftoken=settings.CSRF_TOKEN,
-                       SACSID=settings.SESSION_ID,
-                       GOOGAPPUID=797,)
+        cookies = dict({"csrftoken": settings.CSRF_TOKEN,
+                        "SACSID": settings.SESSION_ID,
+                        "GOOGAPPUID": 679,
+                        'ingress.intelmap.lat': 35.6506,
+                        "ingress.intelmap.lng": 139.7225,
+                        "ingress.intelmap.zoom": 18,
+                       })
+
         headers = {"X-CSRFToken": settings.CSRF_TOKEN,
                    "origin": r"https://www.ingress.com",
                    "Referer": r"https://www.ingress.com/intel",
