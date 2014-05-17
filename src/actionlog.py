@@ -49,24 +49,22 @@ class IngressActionMonitor():
             f.close()
 
     def getChat(self, minTimestampMs):
-        # url='http://www.ingress.com/rpc/dashboard.getPaginatedPlextsV2'
-        m_paginated_plexts = "vd1sh1wsyau65lhf"  # GET_PAGINATED_PLEXTS
-        url='https://www.ingress.com/r/' + m_paginated_plexts
-
         # munge are 
-        m_chattab = "xzlca5100enuvc9n"  # chattab  # nemesis.dashboard.network.PlextStore.prototype.getPlexts b.[a-z0\9]+ = c;
-        m_desiredNumItems = "dzrljqnsqco2l642"  # nemesis.dashboard.requests.normalizeParamCount c = {[a-z0-9]+:f,
-        m_maxTimestampMs = "7a7cg8d3y4fa1mi1"  # :e
-        m_minTimestampMs = "7ts98y7zncnvgdug"  # :f
-        m_minLatE6 = "8aldbuu6x43bwqec"  # :Math.round(d.bounds.sw.lat() * 1E6)
-        m_maxLatE6 = "8vm47on7hg40dh5s"  # :Math.round(d.bounds.ne.lat() * 1E6)
-        m_minLngE6 = "ojnyssfneddurb3n"  # :Math.round(d.bounds.sw.lng() * 1E6)
-        m_maxLngE6 = "77t2v4u22bh2z7qb"  # :Math.round(d.bounds.ne.lng() * 1E6)
+        m_chatTabGet = "dhpokg2l8ifor6ip"
+        m_paginated_plexts = "rk2zhl78nvim3lfb"
+        m_desiredNumItems = "4dm7y35338bpt8uf"
+        m_maxLatE6 = "n5i4kk5e91v05qhj"
+        m_maxLngE6 = "t8ehaqfwsm8rl0su"
+        m_maxTimestampMs = "vkvsh11hvrzqiorq"
+        m_messageSendPlext = "message"
+        m_method = "cjlyxabbu1uznoz7"
+        m_minLatE6 = "qchro05jpucnzas2"
+        m_minLngE6 = "wx0z7xtsafvxivpw"
+        m_minTimestampMs = "41v9xget9jiurw8a"
+        m_version = "4l3d8t6tzzrah7gd"
+        m_version_parameter = "5e1999083e559fffe1934c35c7f36f2f1774533f"
 
-        m_method =  "p89duelkwzzsso1b" #  nemesis.dashboard.network.XhrController.prototype.doSendRequest_  e.[a-z0-9]+ = c
-        m_version = "n8d8jcosz5o10xkn"  # nemesis.dashboard.network.XhrController.prototype.doSendRequest_ e["[a-z0-9]+"] = 
-        m_version_parameter = "5cfaf2cb9c8c61301d6ad03f397b11dbc6ce3f47"  # e["..."] = "........."  # version_parameter
-
+        url='https://www.ingress.com/r/' + m_paginated_plexts
 
         cookies = dict({"csrftoken": settings.CSRF_TOKEN,
                         "SACSID": settings.SESSION_ID,
@@ -84,7 +82,7 @@ class IngressActionMonitor():
         data = {
                 m_method: m_paginated_plexts,
                 m_version: m_version_parameter,
-                m_chattab: "all",
+                m_chatTabGet: "all",
                 m_desiredNumItems: 50,
                 m_minTimestampMs: minTimestampMs,
                 m_maxTimestampMs: -1,
