@@ -52,9 +52,8 @@ new funcs([
     function(){
         // fillin ID/Password
         console.log("2");
-        var r = phantom.injectJs("auth.js");
-        if(!r){
-            console.log("can't read auth.js");
+        if(! phantom.injectJs("auth.js")){
+            console.log("can't read auth.js, please specify id/password to auth.js");
             phantom.exit(1);
         }
         page.evaluate(function(auth){
@@ -82,8 +81,10 @@ new funcs([
         // intel map
         console.log("5");
         page.open('https://ingress.com/intel', function(){
-            var injected = page.injectJs("./munge.js");
-            console.log('injected', injected);
+            if(! page.injectJs("./munge.js")){
+                console.log("can't injectJs munge.js");
+                phantom.exit(1);
+            }
             var munges = page.evaluate(function() {
                 var munges = {};
                 var mungeNames = ["ascendingTimestampOrder", "chatTabGet", "chatTabSendPlext", "dashboard.getArtifactInfo", "dashboard.getGameScore", "dashboard.getPaginatedPlexts", "dashboard.getPortalDetails", "dashboard.getThinnedEntities", "dashboard.sendPlext", "desiredNumItems", "guid", "latE6SendPlext", "lngE6SendPlext", "maxLatE6", "maxLngE6", "maxTimestampMs", "messageSendPlext", "method", "minLatE6", "minLngE6", "minTimestampMs", "quadKeys", "version", "version_parameter"];
